@@ -9,12 +9,6 @@
 
 
 
-
-
-
-
-
-
 $ mat( - sin("az"), cos("az"), 0; 
 - cos("az") * sin("el"), - sin("az") * sin("el"), cos("el");) vec(x,y,z) = vec("screen_x", "screen_y", ) $
 
