@@ -1,6 +1,6 @@
 // Empty .typ file
 
-#set page(paper: "a5", flipped: true, margin: 1cm)
+#set page(width:auto, height:auto, margin: 5mm)
 #set align(center + horizon)
 
 #import "@preview/cetz:0.5.2"
