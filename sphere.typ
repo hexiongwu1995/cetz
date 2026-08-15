@@ -10,7 +10,3 @@ sphere { 0, 1 pigment { rgb <1, 0.4, 0.15> } }
 ```
 
 
-
-// Or load from a file:
-
-
