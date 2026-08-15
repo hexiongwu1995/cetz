@@ -60,8 +60,8 @@
   fill: rgb("#dadada25"),
   stroke: rgb("#ffffff2b"),
   plight: (6, 6, 6),
-  pintensity: 0.5,
-  aintensity: 0.5,
+  pintensity: 0.3,
+  aintensity: 0.7,
 ) = {
   for i in range(theta-num) {
     for j in range(phi-num) {

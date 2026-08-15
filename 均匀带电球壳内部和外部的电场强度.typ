@@ -1,9 +1,7 @@
 #import "./utility/utility.typ": *
 
-
 #set page(paper: "a5", margin: 5mm)
 #set align(center + horizon)
-
 
 #canvas(background: rgb("#d7d7d71b"),{
 
@@ -16,7 +14,7 @@
       let py = -2.5
       on-xz(
         y: py,
-        circle((0, 0), radius: sqrt(9 - pow(py, 2)), fill: red.transparentize(70%), stroke: (
+        circle((0, 0), radius: sqrt(9 - pow(py, 2)), fill: red.transparentize(50%), stroke: (
           paint: red,
           thickness: 1mm,
         )),
@@ -25,6 +23,6 @@
       line((0, py, 0), (0, 0, 0), stroke: (dash: "dashed"))
     }
 
-    draw-sphere(r: r + 0.05, stroke: rgb("#ffffff11"))
+    draw-sphere(r: r + 0.05,fill: rgb("#008cff6c"),  stroke: rgb("#ffffff0c"))
   })
 })
