@@ -2,10 +2,6 @@
 #show: highlight
 #show raw.where(lang: "povray"): pov
 
-// Or load from a file:
-// #render(read("debug-axes.pov"))
-
-
 
 ```povray
 global_settings { assumed_gamma 1.0 max_trace_level 
@@ -41,3 +37,8 @@ Axis(x, <1.0, 0.0, 0.0>, 3)
 Axis(y, <0.0, 1.0, 0.0>, 3)
 Axis(z, <0.0, 0.0, 1.0>, 3)
 ```
+
+
+// Or load from a file:
+// #render(read("debug-axes.pov"))
+

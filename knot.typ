@@ -2,8 +2,6 @@
 #show: highlight
 #show raw.where(lang: "povray"): pov
 
-// Or load from a file:
-// #render(read("knot.pov"))
 
 ```povray
 background { color rgbt <0.9, 0.9, 0.9, 0.9> }
@@ -41,5 +39,9 @@ sphere_sweep {
         }
     no_shadow
 }
-
 ```
+
+
+
+// Or load from a file:
+// #render(read("knot.pov"))

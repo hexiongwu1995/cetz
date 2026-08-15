@@ -2,8 +2,6 @@
 #show: highlight
 #show raw.where(lang: "povray"): pov
 
-// Or load from a file:
-// #render(read("csg.pov"))
 
 ```povray
 global_settings { assumed_gamma 1.0 
@@ -32,5 +30,8 @@ difference {
 specular 1.0 roughness 0.01 }
     no_shadow
 }
-
 ```
+
+
+// Or load from a file:
+// #render(read("csg.pov"))
