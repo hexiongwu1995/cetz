@@ -1,9 +1,9 @@
 #import calc: *
-#import "@preview/cetz:0.5.2": canvas, draw, vector, angle
+#import "@preview/cetz:0.5.2": angle, canvas, draw, vector
 #import draw: *
 #import vector: *
 
-#let draw-cartesion(
+#let draw-cartesian(
   xl: 3cm,
   yl: 3cm,
   zl: 3cm,
@@ -13,6 +13,7 @@
   t: 1pt,
   dash: "solid",
   s: 0.9,
+  draw-angle: true,
 ) = {
   line(
     (0, 0, 0),
@@ -37,6 +38,9 @@
     mark: (end: "stealth", fill: zcolor, scale: s),
     name: "z",
   )
+  if draw-angle {
+    
+  }
 
   content((rel: (0.2, 0, 0), to: "x.end"), [#set text(fill: xcolor); $x$])
   content((rel: (0, 0.2, 0), to: "y.end"), [#set text(fill: ycolor); $y$])
@@ -72,7 +76,7 @@
       let phi-step = 2 * pi / phi-num
       let phi-curr = j * phi-step
       let phi-next = (j + 1) * phi-step
-      
+
       let Pa = sph(r, theta-curr, phi-curr)
       let Pb = sph(r, theta-curr, phi-next)
       let Pc = sph(r, theta-next, phi-next)
@@ -98,4 +102,85 @@
       )
     }
   }
+}
+
+
+
+#let draw-cube(
+  point: (0, 0, 0),
+  xl: 6,
+  yl: 6,
+  zl: 6,
+  xcolor: rgb("#fc00000f"),
+  ycolor: rgb("#77ff000e"),
+  zcolor: rgb("#006dfb13"),
+  neutral-color: rgb("#ffffff23"),
+  stroke: rgb("#e8e8e811") + 1pt,
+  t: 1pt,
+  dash: "solid",
+  s: 0.9,
+) = {
+  let (px, py, pz) = point
+  // draw the xy plane at z = - zl / 2
+  line(
+    (px - xl / 2, py - yl / 2, -zl / 2),
+    (px - xl / 2, py + yl / 2, -zl / 2),
+    (px + xl / 2, py + yl / 2, -zl / 2),
+    (px + xl / 2, py - yl / 2, -zl / 2),
+    close: true,
+    fill: neutral-color,
+    stroke: stroke,
+  )
+  // draw the xy plane at z = zl / 2
+  line(
+    (px - xl / 2, py - yl / 2, zl / 2),
+    (px - xl / 2, py + yl / 2, zl / 2),
+    (px + xl / 2, py + yl / 2, zl / 2),
+    (px + xl / 2, py - yl / 2, zl / 2),
+    close: true,
+    fill: zcolor,
+    stroke: stroke,
+  )
+
+  // draw the xz plane at y = - yl / 2
+  line(
+    (px - xl / 2, -yl / 2, pz - zl / 2),
+    (px - xl / 2, -yl / 2, pz + zl / 2),
+    (px + xl / 2, -yl / 2, pz + zl / 2),
+    (px + xl / 2, -yl / 2, pz - zl / 2),
+    close: true,
+    fill: neutral-color,
+    stroke: stroke,
+  )
+  // draw the xz plane at y = yl / 2
+  line(
+    (px - xl / 2, yl / 2, pz - zl / 2),
+    (px - xl / 2, yl / 2, pz + zl / 2),
+    (px + xl / 2, yl / 2, pz + zl / 2),
+    (px + xl / 2, yl / 2, pz - zl / 2),
+    close: true,
+    fill: ycolor,
+    stroke: stroke,
+  )
+
+  // draw the yz plane at x = - xl / 2
+  line(
+    (-xl / 2, py - yl / 2, pz - zl / 2),
+    (-xl / 2, py - yl / 2, pz + zl / 2),
+    (-xl / 2, py + yl / 2, pz + zl / 2),
+    (-xl / 2, py + yl / 2, pz - zl / 2),
+    close: true,
+    fill: neutral-color,
+    stroke: stroke,
+  )
+  // draw the yz plane at x = xl / 2
+  line(
+    (xl / 2, py - yl / 2, pz - zl / 2),
+    (xl / 2, py - yl / 2, pz + zl / 2),
+    (xl / 2, py + yl / 2, pz + zl / 2),
+    (xl / 2, py + yl / 2, pz - zl / 2),
+    close: true,
+    fill: xcolor,
+    stroke: stroke,
+  )
 }
