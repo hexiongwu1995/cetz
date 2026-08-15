@@ -1,7 +1,7 @@
 #import calc: *
 #import "@preview/cetz:0.5.2": angle, canvas, draw, vector
-#import draw: *
-#import vector: *
+#import draw: content, line, ortho
+#import vector: add, dot, norm
 
 #let draw-cartesian(
   xl: 3cm,
@@ -38,8 +38,19 @@
     mark: (end: "stealth", fill: zcolor, scale: s),
     name: "z",
   )
+
+  // draw the angle between x and y axes
   if draw-angle {
-    
+    angle.angle(
+      "x.start",
+      "x.end",
+      "y.end",
+      label: $alpha$,
+      mark: (end: ">", fill: black, scale: 0.5),
+      stroke: (dash: "dashed"),
+      radius: xl / 2,
+      direction: "ccw",
+    )
   }
 
   content((rel: (0.2, 0, 0), to: "x.end"), [#set text(fill: xcolor); $x$])
@@ -105,7 +116,6 @@
 }
 
 
-
 #let draw-cube(
   point: (0, 0, 0),
   xl: 6,
@@ -115,7 +125,7 @@
   ycolor: rgb("#77ff000e"),
   zcolor: rgb("#006dfb13"),
   neutral-color: rgb("#ffffff23"),
-  stroke: rgb("#e8e8e811") + 1pt,
+  stroke: rgb("#cfcfcf5e") + 1pt,
   t: 1pt,
   dash: "solid",
   s: 0.9,
