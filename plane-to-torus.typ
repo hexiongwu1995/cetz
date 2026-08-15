@@ -31,6 +31,7 @@
 #let view-depth((x, y, z)) = (
   (x * calc.sin(azimuth) + y * calc.cos(azimuth)) * calc.cos(elevation) - z * calc.sin(elevation)
 )
+
 #let dot(a, b) = a.zip(b).map(((p, q)) => p * q).sum()
 #let place-at(point, origin) = project(point).zip(origin).map(((c, o)) => c + o)
 
