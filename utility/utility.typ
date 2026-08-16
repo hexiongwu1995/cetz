@@ -1,6 +1,7 @@
 #import calc: *
+// #import calc: sqrt, pow, sin, cos, pi
 #import "@preview/cetz:0.5.2": angle, canvas, draw, vector
-#import draw: content, line, ortho
+#import draw: content, line, ortho, perspective, on-xz, 
 #import vector: add, dot, norm
 
 #let draw-cartesian(

@@ -8,7 +8,7 @@
   perspective(x: -70deg, y: 0deg, z: -100deg, sorted: false, {
 
     let r = 3
-    draw-cartesion(xl: 4, yl: 6, zl: 4, xcolor: black, ycolor: black, zcolor: black, dash: "solid")
+    draw-cartesian(xl: 4, yl: 6, zl: 4, xcolor: black, ycolor: black, zcolor: black, dash: "solid")
 
     {
       let py = -2.5
