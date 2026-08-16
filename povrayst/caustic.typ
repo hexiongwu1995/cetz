@@ -9,7 +9,7 @@ global_settings {
     max_trace_level 3
     photons { spacing 0.10 gather 3, 8 }
 }
-background { color rgbt <0, 0, 0, 1> }
+background { color rgbt <0.9, 0.9, 0.9, 0.9> }
 camera { location <0, 5.5, -3.5> look_at <0, -1.6,
 1.2> angle 38 }
 light_source {
